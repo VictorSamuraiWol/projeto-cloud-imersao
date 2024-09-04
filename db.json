@@ -220,7 +220,7 @@
         {
             "image": "src/img/KinesisFirehose.png",
             "name": "Kinesis Firehose",
-            "description": "O Amazon Data Firehose fornece a maneira mais fácil de adquirir, transformar e entregar fluxos de dados em segundos para data lakes, data warehouses e serviços de análise. Para usar o Amazon Data Firehose, você configura um fluxo com uma origem, destino e transformações necessárias. O Amazon Data Firehose processa continuamente o stream, dimensiona automaticamente com base na quantidade de dados disponíveis e os entrega em segundos.",
+            "description": "O Amazon Data Firehose fornece a maneira mais fácil de adquirir, transformar e entregar stream de dados em segundos para data lakes, data warehouses e serviços de análise. Para usar o Amazon Data Firehose, você configura um fluxo com uma origem, destino e transformações necessárias. O Amazon Data Firehose processa continuamente o stream, dimensiona automaticamente com base na quantidade de dados disponíveis e os entrega em segundos.",
             "link": "https://aws.amazon.com/pt/firehose/",
             "category": "Streaming"
         }

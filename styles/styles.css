@@ -19,6 +19,17 @@ header img, footer img, li img {
     margin: 16px;
 }
 
+#right-toogle, #left-toogle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+}
+
+#right-toogle {
+    display: none;
+}
+
 /* Estiliza os títulos h1 */
 h1 {
     font-size: 2.5rem; /* Tamanho da fonte */
@@ -39,7 +50,7 @@ section  {
 /* Estiliza os inputs dentro das seções */
 section input {
     width: 30rem; /* Largura dos inputs */
-border: none;
+    border: none;
     padding: 1rem; /* Espaçamento interno */
     border-radius: 1.5rem; /* Borda arredondada */
     margin-bottom: 0.3rem; /* Espaçamento abaixo dos inputs */
