@@ -14,18 +14,20 @@ console.log(groupCards, card, inputSearch, buttonSearch, errorSearch, rightToogl
 leftToogle.addEventListener('click', () => {
     leftToogle.style.display = 'none';
     rightToogle.style.display = 'flex';
-    body.style.backgroundColor = 'black';
-    sectionInput.style.backgroundColor = '#45474B';
+    body.style.backgroundImage = 'url("https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2021/07/01/AdobeStock_413469330_cloud-computing-connection.png")';
+    sectionInput.style.backgroundColor = '#FF6400';
     sectionInput.style.color = 'black';
-    titleH1.style.color = '#45474B';
+    titleH1.style.color = '#FF6400';
+    buttonSearch.style.color = '#FF6400';
 })
 
 rightToogle.addEventListener('click', () => {
     rightToogle.style.display = 'none';
     leftToogle.style.display = 'flex';
-    body.style.backgroundColor = '';
+    body.style.backgroundImage = '';
     sectionInput.style.backgroundColor = '';
     titleH1.style.color = '';
+    buttonSearch.style.color = '';
 })
 
 //npx json-server db.json (http://localhost:3000/services)

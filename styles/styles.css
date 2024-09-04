@@ -4,12 +4,13 @@
 /* Estiliza o corpo da página */
 body {
     font-family: "Chakra Petch", sans-serif; /* Define a fonte padrão */
-    background-color: #DDDDDD; /* Cor de fundo da página */
+    background-image: url("https://i.pinimg.com/originals/76/a6/5a/76a65a926d6276eaca577d4d1a22bfb5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex; /* Usa Flexbox para layout */
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: space-between;
-    
+    justify-content: space-between;    
     margin: 0;
     padding: 0;
 }
@@ -17,6 +18,11 @@ body {
 header img, footer img, li img {
     width: 80px;
     margin: 16px;
+}
+
+header #right-toogle, #left-toogle {
+    background-color: #F5F7F8;
+    border-radius: 5px;
 }
 
 #right-toogle, #left-toogle {
@@ -33,7 +39,7 @@ header img, footer img, li img {
 /* Estiliza os títulos h1 */
 h1 {
     font-size: 2.5rem; /* Tamanho da fonte */
-    color: #222831; /* Cor do texto */
+    color: #F5F7F8; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
     margin-bottom: 16px;
@@ -67,6 +73,10 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#error-search {
+    color: red;
 }
 
 /* Estiliza os botões dentro das seções */
