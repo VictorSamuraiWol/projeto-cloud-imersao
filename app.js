@@ -13,12 +13,17 @@ async function fetchData() {
         const data = await response.json();
 
         data.forEach(card => {
+            const srcImg = card.image;
             const title = card.name;
+            const description = card.description;
+            const link = card.link;
+
             groupCards.innerHTML += `
-            <li class="card">
-                <img src='' alt="service icon" />
-                <h2>Title: ${title}</h2>
-                <h3>Description:</h3>
+            <li class="card item-resultado ">
+                <img src=${srcImg} alt="service icon" />
+                <h2>${title}</h2>
+                <h3 class="descricao-meta">Description: ${description}</h3>
+                <a href=${link} target="_blank">mais informações</a>
             </li>
             `;
         });
@@ -33,28 +38,36 @@ fetchData();
 buttonSearch.addEventListener('click', () => {
     let value = `${inputSearch.value}`;
     async function fetchSearch() {
-        // let value = 'Cloudwatch';
         try {
             const response = await fetch(`http://localhost:3000/services?name=${value}`);
             const data = await response.json();
-            let title; //trazendo a variável para fora
+            let title = ""; //trazendo a variável para fora
             data.forEach(card => {
+                let srcImg = card.image;
                 title = card.name;
+                let description = card.description;
+                let link = card.link;
+
+                if (value.length > 0) {
                 groupCards.innerHTML = `
-                <img src='' alt="service icon" />
-                <h2>Title: ${title}</h2>
-                <h3>Description:</h3>
+                <li class="card item-resultado ">
+                    <img src=${srcImg} alt="service icon" />
+                    <h2>${title}</h2>
+                    <h3 class="descricao-meta">Description: ${description}</h3>
+                    <a href=${link} target="_blank">mais informações</a>
+                </li>
                 `;
-            });
+                }
+            });                
 
+            //validação
             if (value == title) {
-                inputSearch.style.borderColor = 'green'
-                errorSearch.innerText = ''
+                inputSearch.style.border = '2px solid green';
+                errorSearch.innerText = '';
             } else {
-                inputSearch.style.borderColor = 'red';
-                errorSearch.innerText = 'Por favor, digite o serviço corretamente!'
-            }
-
+                inputSearch.style.border = '2px solid red';
+                errorSearch.innerText = 'Por favor, digite o serviço corretamente!';
+            } 
         } catch (error) {
             console.error('Erro ao buscar dados:', error);
         }
@@ -62,4 +75,3 @@ buttonSearch.addEventListener('click', () => {
 
     fetchSearch();
 })
-

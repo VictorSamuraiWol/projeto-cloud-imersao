@@ -1,13 +1,28 @@
 {
     "services": [
         {
-            "name": "Cloudwatch"
+            "image": "src/img/CloudWatch.png",
+            "name": "Cloudwatch",
+            "description": "O Amazon CloudWatch é um serviço que monitora aplicações, responde às mudanças de desempenho, otimiza o uso de recursos e fornece insights sobre a integridade operacional. Ao coletar dados de todos os recursos da AWS, o CloudWatch fornece visibilidade sobre o desempenho de todo o sistema e permite que os usuários definam alarmes, reajam automaticamente às mudanças e obtenham uma visão unificada da integridade operacional.",
+            "link": "https://aws.amazon.com/pt/cloudwatch/"
         },
         {
-            "name": "Cloudtrail"
+            "image": "src/img/CloudTrail.png",
+            "name": "Cloudtrail",
+            "description": "O AWS CloudTrail é um serviço que possibilita governança, conformidade, auditoria operacional e auditoria de riscos na sua conta da AWS.",
+            "link": "https://aws.amazon.com/pt/cloudtrail/"
         },
         {
-            "name": "Trusted Advisor"
+            "image": "src/img/TrustedAdvisor.png",
+            "name": "Trusted Advisor",
+            "description": "O AWS Trusted Advisor ajuda você a otimizar custos, aumentar a performance, melhorar a segurança e a resiliência e operar em grande escala na nuvem. O Trusted Advisor avalia continuamente seu ambiente da AWS usando verificações de práticas recomendadas entre as categorias de otimização de custos da nuvem, performance, resiliência, segurança, excelência operacional e limites de serviço, e recomenda ações para remediar todos os desvios em relação às práticas recomendadas. O Trusted Advisor Priority ajuda os clientes do AWS Enterprise Support a se concentrarem nas recomendações mais importantes, fornecendo recomendações orientadas pelo contexto e priorizadas de sua equipe de contas da AWS.",
+            "link": "https://aws.amazon.com/pt/premiumsupport/technology/trusted-advisor/"
+        },
+        {
+            "image": "src/img/IAMIdentityCenter.png",
+            "name": "IAM",
+            "description": "Use o IAM para gerenciar e escalar a workload e o acesso da força de trabalho com segurança, apoiando sua agilidade e inovação na AWS.",
+            "link": "https://aws.amazon.com/pt/iam/"
         }
     ]
 }

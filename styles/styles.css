@@ -8,12 +8,16 @@ body {
     display: flex; /* Usa Flexbox para layout */
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
+    justify-content: space-between;
+    
     margin: 0;
     padding: 0;
 }
 
+header img, footer img, li img {
+    width: 80px;
+    margin: 16px;
+}
 
 /* Estiliza os títulos h1 */
 h1 {
@@ -21,10 +25,11 @@ h1 {
     color: #222831; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    margin-bottom: 16px;
 }
 
 /* Estiliza as seções da página */
-section {
+section  {
     display: flex; /* Usa Flexbox para layout */
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
@@ -34,13 +39,23 @@ section {
 /* Estiliza os inputs dentro das seções */
 section input {
     width: 30rem; /* Largura dos inputs */
-    border: none; /* Remove a borda padrão */
+border: none;
     padding: 1rem; /* Espaçamento interno */
     border-radius: 1.5rem; /* Borda arredondada */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
+    margin-bottom: 0.3rem; /* Espaçamento abaixo dos inputs */
     color: #45474B; /* Cor do texto */
     font-size: 1rem; /* Tamanho da fonte */
     box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+input:focus {
+    outline: none;
+}
+
+#input-span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Estiliza os botões dentro das seções */
@@ -52,6 +67,7 @@ section button {
     color: #F5F7F8; /* Cor do texto do botão */
     font-size: 1rem; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin: 8px;
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
@@ -66,6 +82,10 @@ section button {
 
 /* Estiliza cada item de resultado */
 .item-resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFF; /* Cor de fundo dos itens */
     border-radius: 0.6rem; /* Borda arredondada */
     padding: 1rem; /* Espaçamento interno */
@@ -106,4 +126,9 @@ footer {
     position: absolute; /* Posiciona o rodapé */
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 1rem; /* Tamanho da fonte */
+}
+
+footer p {
+    margin-bottom: 16px;
+
 }
