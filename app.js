@@ -89,7 +89,7 @@ buttonSearch.addEventListener('click', () => {
             });                
 
             //validação
-            if (value == title) {
+            if (value === title) {
                 inputSearch.style.border = '2px solid green';
                 errorSearch.innerText = '';
             } else {
