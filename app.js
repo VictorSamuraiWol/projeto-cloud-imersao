@@ -6,6 +6,7 @@ const errorSearch = document.querySelector('#error-search')
 
 console.log(groupCards, card, inputSearch, buttonSearch)
 
+//npx json-server db.json
 //requisição de todos os cards da API
 async function fetchData() {
     try {
@@ -17,12 +18,14 @@ async function fetchData() {
             const title = card.name;
             const description = card.description;
             const link = card.link;
+            const category = card.category;
 
             groupCards.innerHTML += `
             <li class="card item-resultado ">
                 <img src=${srcImg} alt="service icon" />
                 <h2>${title}</h2>
                 <h3 class="descricao-meta">Description: ${description}</h3>
+                <h3 class="descricao-meta">Category: ${category}</h3>
                 <a href=${link} target="_blank">mais informações</a>
             </li>
             `;
@@ -47,6 +50,7 @@ buttonSearch.addEventListener('click', () => {
                 title = card.name;
                 let description = card.description;
                 let link = card.link;
+                const category = card.category;
 
                 if (value.length > 0) {
                 groupCards.innerHTML = `
@@ -54,6 +58,7 @@ buttonSearch.addEventListener('click', () => {
                     <img src=${srcImg} alt="service icon" />
                     <h2>${title}</h2>
                     <h3 class="descricao-meta">Description: ${description}</h3>
+                    <h3 class="descricao-meta">Category: ${category}</h3>
                     <a href=${link} target="_blank">mais informações</a>
                 </li>
                 `;
