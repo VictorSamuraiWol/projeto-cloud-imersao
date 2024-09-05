@@ -6,6 +6,10 @@ const errorSearch = document.querySelector('#error-search');
 
 console.log(groupCards, card, inputSearch, buttonSearch, errorSearch)
 
+function clean() {
+    inputSearch.value = ''
+}
+
 //npx json-server src/db.json (http://localhost:3000/services)
 //requisição de todos os cards da API
 async function fetchData() {
@@ -74,7 +78,8 @@ function requestFetchSearch() {
                 } else {
                     inputSearch.style.border = '2px solid red';
                     errorSearch.innerText = 'Por favor, digite o serviço corretamente!';
-                } 
+                }
+                clean(); 
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
             }
