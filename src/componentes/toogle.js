@@ -10,7 +10,7 @@ function toogle() {
     leftToogle.addEventListener('click', () => {
         leftToogle.style.display = 'none';
         rightToogle.style.display = 'flex';
-        body.style.backgroundImage = 'url("https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2021/07/01/AdobeStock_413469330_cloud-computing-connection.png")';
+        body.style.backgroundImage = 'url("https://blog.e-zest.com/hubfs/How%20to%20use%20AWS%20Backup%20service.png")';
         sectionInput.style.backgroundColor = '#FF6400';
         sectionInput.style.color = 'black';
         titleH1.style.color = '#FF6400';
