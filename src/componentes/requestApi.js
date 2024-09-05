@@ -1,29 +1,34 @@
+// Select DOM elements
 const groupCards = document.querySelector('#group-cards');
 const card = document.querySelectorAll('.card');
 const inputSearch = document.querySelector('#input-search');
 const buttonSearch = document.querySelector('#button-search');
 const errorSearch = document.querySelector('#error-search');
 
-console.log(groupCards, card, inputSearch, buttonSearch, errorSearch)
-
+// Function to clear the search input
 function clean() {
     inputSearch.value = ''
 }
 
-//npx json-server src/db.json (http://localhost:3000/services)
-//requisição de todos os cards da API
+// (Comment assuming this line is executed externally)
+// Starts a json-server to mock an API endpoint at http://localhost:3000/services
+//command: npx json-server src/db.json
+
+// Function to fetch all cards data from the API
 async function fetchData() {
     try {
-        const response = await fetch('http://localhost:3000/services');
-        const data = await response.json();
+        const response = await fetch('http://localhost:3000/services'); // Fetch data from the API endpoint
+        const data = await response.json(); // Parse the response as JSON
 
+        // Loop through each card in the fetched data
         data.forEach(card => {
-            const srcImg = card.image;
-            const title = card.name;
-            const description = card.description;
-            const link = card.link;
-            const category = card.category;
+            const srcImg = card.image; // Extract image URL
+            const title = card.name; // Extract card title
+            const description = card.description; // Extract card description
+            const link = card.link; // Extract card link
+            const category = card.category; // Extract card category
 
+            // Build the HTML structure for each card
             groupCards.innerHTML += `
             <li class="card item-resultado">
                 <img src=${srcImg} alt="service icon" />
@@ -36,30 +41,32 @@ async function fetchData() {
             
         });
     } catch (error) {
-        console.error('Erro ao buscar dados:', error);
+        console.error('Erro ao buscar dados:', error); // Log any errors during data fetching
     }
 }
 
-fetchData();
+fetchData(); // Call the fetchData function to fetch initial data
 
-//requição quando o botão procurar for clicado
+// Function to handle search button click
 function requestFetchSearch() {
     buttonSearch.addEventListener('click', () => {
-        let value = `${inputSearch.value}`;
+        let value = `${inputSearch.value}`; // Get the search input value
+
         async function fetchSearch() {
             try {
-                const response = await fetch(`http://localhost:3000/services?name=${value}`);
+                const response = await fetch(`http://localhost:3000/services?name=${value}`); // Build the search API endpoint URL
                 const data = await response.json();
-                let title = ""; //trazendo a variável para fora
+                let title = ""; // Declare title variable outside the loop (assuming it's used for comparison later)
                 data.forEach(card => {
                     let srcImg = card.image;
                     title = card.name;
                     let description = card.description;
                     let link = card.link;
                     const category = card.category;
-    
-                    if (value.length > 0) {
-                    groupCards.innerHTML = `
+                    
+                    // Only display search results if there's input
+                    if (value.length > 0) { // if value has a length greater than 0, so clear previous results and display only the searched card
+                    groupCards.innerHTML = ` 
                     <li class="card item-resultado ">
                         <img src=${srcImg} alt="service icon" />
                         <h2>${title}</h2>
@@ -71,21 +78,21 @@ function requestFetchSearch() {
                     }
                 });                
     
-                //validação
-                if (value === title) {
-                    inputSearch.style.border = '2px solid green';
-                    errorSearch.innerText = '';
+                // Validate search results
+                if (value === title) { // Assuming title is used for comparison
+                    inputSearch.style.border = '2px solid green'; // Set green border for successful search
+                    errorSearch.innerText = ''; // Clear any previous error message
                 } else {
-                    inputSearch.style.border = '2px solid red';
-                    errorSearch.innerText = 'Por favor, digite o serviço corretamente!';
+                    inputSearch.style.border = '2px solid red'; // Set red border for failed search
+                    errorSearch.innerText = 'Por favor, digite o serviço corretamente!'; // Display error message 
                 }
-                clean(); 
+                clean(); // Clear the search input after processing 
             } catch (error) {
-                console.error('Erro ao buscar dados:', error);
+                console.error('Erro ao buscar dados:', error); // Log any errors during search fetching
             }
         }
     
-        fetchSearch();
+        fetchSearch(); // Call the fetchSearch function to perform the search
     })
 }
 
