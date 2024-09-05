@@ -30,7 +30,7 @@ rightToogle.addEventListener('click', () => {
     buttonSearch.style.color = '';
 })
 
-//npx json-server db.json (http://localhost:3000/services)
+//npx json-server src/db.json (http://localhost:3000/services)
 //requisição de todos os cards da API
 async function fetchData() {
     try {
