@@ -47,62 +47,6 @@ async function fetchData() {
 
 fetchData(); // Call the fetchData function to fetch initial data
 
-// Function to handle search button click
-// function requestFetchSearch() {
-//     buttonSearch.addEventListener('click', () => {
-//         let value = `${inputSearch.value}`; // Get the search input value
-//         value = value.toLowerCase();
-//         console.log(value);
-
-//         async function fetchSearch() {
-//             try {
-//                 const response = await fetch(`http://localhost:3000/services?name=${value}`); // Build the search API endpoint URL
-//                 const data = await response.json();
-//                 let title = ""; // Declare title variable outside the loop (assuming it's used for comparison later)
-//                 data.forEach(card => {
-//                     let srcImg = card.image;
-//                     title = card.name;
-//                     let description = card.description;
-//                     let link = card.link;
-//                     let category = card.category;
-                    
-//                     // Only display search results if there's input
-//                     if (value.length > 0) { // if value has a length greater than 0, so clear previous results and display only the searched card
-//                     groupCards.innerHTML = ` 
-//                     <li class="card item-resultado ">
-//                         <img src=${srcImg} alt="service icon" />
-//                         <h2>${title}</h2>
-//                         <h3 class="descricao-meta">Description: ${description}</h3>
-//                         <h3 class="descricao-meta">Category: ${category}</h3>
-//                         <a href=${link} target="_blank">mais informações</a>
-//                     </li>
-//                     `;
-//                     }
-//                 });                
-    
-//                 // Validate search results
-//                 if (value === title || value === description || value === category) { // Assuming title is used for comparison
-//                     inputSearch.style.border = '2px solid green'; // Set green border for successful search
-//                     errorSearch.innerText = ''; // Clear any previous error message
-//                 } else {
-//                     inputSearch.style.border = '2px solid red'; // Set red border for failed search
-//                     errorSearch.innerText = 'Por favor, digite o serviço corretamente!'; // Display error message
-//                     groupCards.innerHTML = "Não foi encontrado o serviço especificado. Por favor, digite o nome completo do serviço."
-//                 }
-//                 clean(); // Clear the search input after processing 
-//             } catch (error) {
-//                 console.error('Erro ao buscar dados:', error); // Log any errors during search fetching
-//             }
-//         }
-    
-//         fetchSearch(); // Call the fetchSearch function to perform the search
-//     })
-// }
-
-// requestFetchSearch()
-
-//_______________________________________________________________________________________________________________
-
 function requestFetchSearch() {
     buttonSearch.addEventListener('click', () => {
         let value = `${inputSearch.value}`;
