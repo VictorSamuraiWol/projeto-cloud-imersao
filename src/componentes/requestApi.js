@@ -48,29 +48,42 @@ async function fetchData() {
 fetchData(); // Call the fetchData function to fetch initial data
 
 function requestFetchSearch() {
+    // Add event listener to the search button for click event
     buttonSearch.addEventListener('click', () => {
+
+        // Get the value from the search input and convert it to lowercase
         let value = `${inputSearch.value}`;
         value = value.toLowerCase();
 
+        // Initialize empty variables for storing converted data (lowercase)
         let lowerName = '';
         let lowerDescription = '';
         let lowerCategory = '';
 
+        // Create an empty array to store filtered cards
         let newGroupCardFilter = [];
         
+        // Async function to perform the search
         async function fetchSearch() {
+            // Clear the existing content in the group cards container
             groupCards.innerHTML = '';
+
             try {
+                // Fetch data from the API endpoint
                 const response = await fetch(`http://localhost:3000/services`); 
                 const data = await response.json();
 
+                // Filter the data using the filter method
                 data.filter(card => {
+                    // Convert card properties (name, description, category) to lowercase for case-insensitive search
                     lowerName = card.name.toLowerCase()
                     lowerDescription = card.description.toLowerCase()
                     lowerCategory = card.category.toLowerCase()
                     
+                    // Check if the search term is included in any of the converted properties (considering minimum length of 1 character)
                     if ((lowerName.includes(value) && (value.length > 0)) || (lowerDescription.includes(value) && (value.length > 0)) || (lowerCategory.includes(value) && (value.length > 0))) {
                     
+                    // Extract card details for displaying results
                     let title = card.title; 
                     let srcImg = card.image;
                     title = card.name;
@@ -78,6 +91,7 @@ function requestFetchSearch() {
                     let link = card.link;
                     let category = card.category;
                     
+                    // Build the HTML structure for each search result using template literals
                     groupCards.innerHTML += ` 
                     <li class="card item-resultado ">
                         <img src=${srcImg} alt="service icon" />
@@ -88,27 +102,35 @@ function requestFetchSearch() {
                     </li>
                     `;
                     
-                    newGroupCardFilter = [card];
-                    
+                    // Add the filtered card to the new array
+                    newGroupCardFilter.push(card);
                     }                                             
                 });               
                
+                // Check if any results were found
                 if (newGroupCardFilter.length > 0) {
+                    // Set green border for the search input indicating successful search
                     inputSearch.style.border = '2px solid green';
+                    // Clear any previous error message
                     errorSearch.innerText = ''; 
-                    console.log(newGroupCardFilter.length)
+                    console.log(newGroupCardFilter.length + `${newGroupCardFilter.length < 2 ? ' resultado encontrado.' : ' resultados encontrados.'}`);
                 } else {
+                    // Set red border for the search input indicating no results
                     inputSearch.style.border = '2px solid red'; 
-                    errorSearch.innerText = 'Por favor, digite o serviço corretamente!'; 
+                    // Display an error message
+                    errorSearch.innerText = 'Por favor, digite o serviço corretamente!';
+                    // Update the content with a message indicating no results found
                     groupCards.innerHTML = "Não foi encontrado o serviço especificado. Por favor, digite o nome completo do serviço."
-                    console.log(newGroupCardFilter.length)
+                    console.log(newGroupCardFilter.length + ' resultado encontrado.');
                 }
+
+                // Call a function to perform any cleanup tasks
                 clean();
             } catch (error) {
                 console.error('Erro ao buscar dados:', error); 
             }
         }
-    
+        // Call the fetchSearch function on button click
         fetchSearch(); 
     })
 }
