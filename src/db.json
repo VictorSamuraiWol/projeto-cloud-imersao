@@ -107,14 +107,14 @@
         },
         {
             "image": "src/img/CloudFormation.png",
-            "name": "CloudFormation",
+            "name": "Cloudformation",
             "description": "O AWS CloudFormation permite modelar, provisionar e gerenciar recursos da AWS e de terceiros ao tratar a infraestrutura como código.",
             "link": "https://aws.amazon.com/pt/cloudformation/", 
             "category": "Gerenciamento"
         },
         {
             "image": "src/img/CloudWatch.png",
-            "name": "CloudWatch",
+            "name": "Cloudwatch",
             "description": "O Amazon CloudWatch é um serviço que monitora aplicações, responde às mudanças de desempenho, otimiza o uso de recursos e fornece insights sobre a integridade operacional. Ao coletar dados de todos os recursos da AWS, o CloudWatch fornece visibilidade sobre o desempenho de todo o sistema e permite que os usuários definam alarmes, reajam automaticamente às mudanças e obtenham uma visão unificada da integridade operacional.",
             "link": "https://aws.amazon.com/pt/cloudwatch/", 
             "category": "Gerenciamento"
@@ -156,28 +156,28 @@
         },
         {
             "image": "src/img/CodeCommit.png",
-            "name": "CodeCommit",
+            "name": "Codecommit",
             "description": "O AWS CodeCommit é um serviço de controle de código-fonte totalmente gerenciado, seguro e altamente escalável que hospeda repositórios privados do Git.",
             "link": "https://aws.amazon.com/pt/codecommit/",
             "category": "Desenvolvimento"
         },
         {
             "image": "src/img/CodePipeline.png",
-            "name": "CodePipeline",
+            "name": "Codepipeline",
             "description": "O AWS CodePipeline é um serviço totalmente gerenciado de entrega contínua que ajuda a automatizar pipelines de lançamento para oferecer atualizações rápidas e confiáveis de aplicações e infraestruturas.",
             "link": "https://aws.amazon.com/pt/codepipeline/",
             "category": "Desenvolvimento"
         },
         {
             "image": "src/img/CodeBuild.png",
-            "name": "CodeBuild",
+            "name": "Codebuild",
             "description": "O AWS CodeBuild é um serviço de integração contínua totalmente gerenciado que compila código-fonte, executa testes e produz pacotes de software prontos para implantação.",
             "link": "https://aws.amazon.com/pt/codebuild/",
             "category": "Desenvolvimento"
         },
         {
             "image": "src/img/SageMaker.png",
-            "name": "SageMaker",
+            "name": "Sagemaker",
             "description": "O Amazon SageMaker é um serviço totalmente gerenciado que reúne um amplo conjunto de ferramentas para proporcionar machine learning (ML) de alta performance e baixo custo para qualquer caso de uso. Com o SageMaker, você pode criar, treinar e implantar modelos de ML em grande escala usando ferramentas como cadernos, depuradores, perfiladores, pipelines, MLOps e muito mais, tudo em um ambiente de desenvolvimento integrado (IDE). O SageMaker oferece suporte aos requisitos de governança com controle de acesso simplificado e transparência sobre seus projetos de ML. Além disso, você pode criar seus próprios FMs, modelos grandes que foram treinados em grandes conjuntos de dados, com ferramentas específicas para ajustar, experimentar, retreinar e implantar FMs. O SageMaker oferece acesso a centenas de modelos pré-treinados, incluindo FMs disponíveis publicamente, que você pode implantar com apenas alguns cliques.",
             "link": "https://aws.amazon.com/pt/sagemaker/",
             "category": "Machine Learning"

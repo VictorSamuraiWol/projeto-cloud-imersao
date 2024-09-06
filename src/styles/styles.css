@@ -99,6 +99,8 @@ section button {
     margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0.6rem; /* Borda arredondada */
+    color: #F5F7F8;
+    text-align: center;
 }
 
 /* Estiliza cada item de resultado */
