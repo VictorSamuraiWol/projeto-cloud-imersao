@@ -100,9 +100,9 @@ function servicesSearch() {
             // Set red border for the search input indicating no results
             inputSearch.style.border = '2px solid red';
             // Display an error message 
-            errorSearch.innerText = 'Por favor, digite o serviço corretamente!';
+            errorSearch.innerText = 'Por favor, digite o serviço ou algo relacionado corretamente!';
             // Update the content with a message indicating no results found
-            groupCards.innerHTML = "Não foi encontrado o serviço especificado. Por favor, digite o nome completo do serviço."
+            groupCards.innerHTML = "Não foi encontrado o serviço especificado. Por favor, digite o nome do serviço ou algo relacionado de forma correta."
             console.log(newGroupCardFilter.length + ' resultado encontrado.');
         }
 
