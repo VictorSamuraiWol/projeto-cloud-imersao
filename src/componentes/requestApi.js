@@ -59,6 +59,7 @@ function requestFetchSearch() {
         let lowerName = '';
         let lowerDescription = '';
         let lowerCategory = '';
+        let lowerTags = '';
 
         // Create an empty array to store filtered cards
         let newGroupCardFilter = [];
@@ -79,9 +80,10 @@ function requestFetchSearch() {
                     lowerName = card.name.toLowerCase()
                     lowerDescription = card.description.toLowerCase()
                     lowerCategory = card.category.toLowerCase()
+                    lowerTags = card.tags.toLowerCase()
                     
                     // Check if the search term is included in any of the converted properties (considering minimum length of 1 character)
-                    if ((lowerName.includes(value) && (value.length > 0)) || (lowerDescription.includes(value) && (value.length > 0)) || (lowerCategory.includes(value) && (value.length > 0))) {
+                    if ((lowerName.includes(value) && (value.length > 0)) || (lowerDescription.includes(value) && (value.length > 0)) || (lowerCategory.includes(value) && (value.length > 0)) || (lowerTags.includes(value) && (value.length > 0))) {
                     
                     // Extract card details for displaying results
                     let title = card.title; 
